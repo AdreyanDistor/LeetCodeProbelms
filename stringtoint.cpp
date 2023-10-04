@@ -4,7 +4,7 @@ public:
         int return_int = 0;
         int i = 0;
         char sign = '+';
-        int factor = 1;
+        int factor = 10;
         while( i < s.length())
         {
             cout << "Thing: " <<  s.at(i) << endl;
@@ -12,12 +12,13 @@ public:
             {
                 sign = '-';
             }
-            else if('a' - s.at(i) >= 41 && 'a' - s.at(i) <= 49)
+            else if('a' - s.at(i) >= 40 && 'a' - s.at(i) <= 48)
             {
                 return_int*=factor;
+                                cout << "past return: " << return_int << endl;
+
                 return_int += (s.at(i) - '0');
                 cout << "CUrr return: " << return_int << endl;
-                factor*=10;
             }
             i++;
         }
